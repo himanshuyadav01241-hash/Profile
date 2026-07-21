@@ -1,705 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSANE HR | Gaming Portfolio</title>
-
-    <meta name="theme-color" content="#ff003c">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himanshu Yadav - Profile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+<body>
 
-<body class="dark">
+  <!-- Background Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
 
-    <!-- LOADER -->
+  <main class="container">
+    <section class="profile-card glass-box">
+      
+      <!-- Profile Header Banner -->
+      <header class="profile-header">
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
 
-    <div id="loader">
-
-        <div class="loader-logo">
-            INSANE
+        <div class="main-profile">
+          <div class="profile-image" id="profileImg"></div>
+          <div class="profile-names">
+            <h1 class="username">Himanshu Yadav</h1>
+            <small class="page-title">Full Stack &amp; Web Developer</small>
+          </div>
         </div>
+      </header>
 
-        <div class="loader-line">
-            <span></span>
-        </div>
+      <!-- Profile Body -->
+      <div class="profile-body">
+        
+        <!-- Sidebar Actions & Bio -->
+        <aside class="profile-actions">
+          <button class="action-btn follow" id="followBtn">Follow</button>
 
-    </div>
-
-    <!-- BACKGROUND -->
-
-    <div id="bg">
-
-        <div class="grid"></div>
-
-        <div class="glow glow1"></div>
-
-        <div class="glow glow2"></div>
-
-        <div id="particles"></div>
-
-    </div>
-
-    <!-- CURSOR -->
-
-    <div id="cursor"></div>
-
-    <div id="cursor2"></div>
-
-    <!-- NAV -->
-
-    <header>
-
-        <div class="logo">
-
-            <i class="fa-solid fa-gamepad"></i>
-
-            INSANE HR
-
-        </div>
-
-        <nav>
-
-            <a href="#about">About</a>
-
-            <a href="#games">Games</a>
-
-            <a href="#setup">Setup</a>
-
-            <a href="#socials">Socials</a>
-
-        </nav>
-
-        <div class="top-right">
-
-            <div id="clock">
-
-                00:00:00
-
+          <!-- Interactive Music Button with Equalizer -->
+          <button class="action-btn message" id="musicToggleBtn">
+            <i class="fa-solid fa-music"></i> 
+            <span id="musicText">Play Music</span>
+            <div class="equalizer" id="equalizer">
+              <span></span><span></span><span></span>
             </div>
-
-            <button id="themeButton">
-
-                <i class="fa-solid fa-moon"></i>
-
-            </button>
-
-        </div>
-
-    </header>
-
-    <!-- HERO -->
-
-    <section id="hero">
-
-        <div class="hero-left">
-
-            <div class="online">
-
-                <span></span>
-
-                ONLINE
-
+          </button>
+          
+          <div class="bio glass-subcard">
+            <div class="bio-header">
+              <i class="fa-solid fa-user-gear"></i> Bio
             </div>
-
-            <h1>
-
-                INSANE <span>HR</span>
-
-            </h1>
-
             <p>
-
-                Gamer • Streamer • Developer
-
+              Building modern web applications and tools. Focused on clean logic, solid user interfaces, and shipping functional projects.
             </p>
+          </div>
+        </aside>
 
-            <div class="hero-buttons">
-
-                <a href="#socials" class="btn red">
-
-                    Follow Me
-
-                </a>
-
-                <a href="#music" class="btn glass">
-
-                    Music
-
-                </a>
-
+        <!-- Account Data & Projects -->
+        <section class="account-info">
+          
+          <div class="data glass-subcard">
+            <div class="important-data">
+              <div class="data-item">
+                <p class="value counter" data-target="30" id="repo-count-val">0</p>
+                <p class="label">Repos</p>
+              </div>
+              <div class="data-item">
+                <p class="value counter" data-target="900">0</p>
+                <p class="label">LeetCode</p>
+              </div>
+              <div class="data-item">
+                <p class="value counter" data-target="1942">0</p>
+                <p class="label">Rating</p>
+              </div>
             </div>
-
-            <div class="stats">
-
-                <div>
-
-                    <h2>500+</h2>
-
-                    <span>Hours</span>
-
-                </div>
-
-                <div>
-
-                    <h2>25+</h2>
-
-                    <span>Games</span>
-
-                </div>
-
-                <div>
-
-                    <h2>100%</h2>
-
-                    <span>Passion</span>
-
-                </div>
-
+            
+            <div class="other-data">
+              <div class="data-item">
+                <p class="value">Full Stack</p>
+                <p class="label">Stack Focus</p>
+              </div>
+              <div class="data-item">
+                <p class="value">Open Source</p>
+                <p class="label">Contributions</p>
+              </div>
             </div>
-
-        </div>
-
-        <div class="hero-right">
-
-            <div class="avatar-ring ring1"></div>
-
-            <div class="avatar-ring ring2"></div>
-
-            <div class="avatar-ring ring3"></div>
-
-            <div class="avatar-glow"></div>
-
-            <img src="avatars.jpg"
-                class="avatar"
-                alt="Avatar">
-
-            <div class="floating-card">
-
-                <i class="fa-solid fa-fire"></i>
-
-                Gaming Everyday
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- MUSIC -->
-
-    <section id="music">
-
-        <div class="section-title">
-
-            Music Player
-
-        </div>
-
-        <div class="music-player">
-
-            <div class="disc">
-
-                <div class="disc-center"></div>
-
-            </div>
-
-            <div class="music-info">
-
-                <h3 id="songTitle">
-
-                    Midnight City
-
-                </h3>
-
-                <p>
-
-                    Personal Playlist
-
-                </p>
-
-            </div>
-
-            <div class="controls">
-
-                <button id="prev">
-
-                    <i class="fa-solid fa-backward"></i>
-
-                </button>
-
-                <button id="play">
-
-                    <i class="fa-solid fa-play"></i>
-
-                </button>
-
-                <button id="next">
-
-                    <i class="fa-solid fa-forward"></i>
-
-                </button>
-
-            </div>
-
-            <div class="progress">
-
-                <div class="bar"></div>
-
-            </div>
-
-            <audio id="audio"></audio>
-
-        </div>
-
-    </section>
-        <!-- ABOUT -->
-
-    <section id="about">
-
-        <div class="section-title">
-            About Me
-        </div>
-
-        <div class="about-grid">
-
-            <div class="about-card glass">
-
-                <h3>
-                    <i class="fa-solid fa-user"></i>
-                    Who Am I
-                </h3>
-
-                <p>
-                    Hey! I'm <b>INSANE HR</b>, a passionate gamer who enjoys FPS,
-                    RPG and multiplayer games. I love building cool websites,
-                    streaming, and creating unique gaming experiences.
-                </p>
-
-            </div>
-
-            <div class="about-card glass">
-
-                <h3>
-                    <i class="fa-solid fa-heart"></i>
-                    Favorite Games
-                </h3>
-
-                <ul>
-
-                    <li>Valorant</li>
-
-                    <li>GTA V RP</li>
-
-                    <li>Minecraft</li>
-
-                    <li>CS2</li>
-
-                    <li>Forza Horizon 5</li>
-
-                </ul>
-
-            </div>
-
-            <div class="about-card glass">
-
-                <h3>
-                    <i class="fa-solid fa-trophy"></i>
-                    Achievements
-                </h3>
-
-                <div class="achievement">
-
-                    <span>🏆</span>
-
-                    <p>500+ Gaming Hours</p>
-
-                </div>
-
-                <div class="achievement">
-
-                    <span>🔥</span>
-
-                    <p>Daily Active Gamer</p>
-
-                </div>
-
-                <div class="achievement">
-
-                    <span>🎯</span>
-
-                    <p>Competitive FPS Player</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- SOCIALS -->
-
-    <section id="socials">
-
-        <div class="section-title">
-
-            Connect With Me
-
-        </div>
-
-        <div class="social-grid">
-
-            <a href="#" class="social-card kick">
-
-                <i class="fa-brands fa-kickstarter-k"></i>
-
-                <h3>Kick</h3>
-
-                <p>Watch Live</p>
-
+          </div>
+
+          <!-- Social / Profile Links -->
+          <div class="social-media glass-subcard">
+            <span>Connect:</span>
+            <a href="https://github.com/himanshuyadav01241-hash" target="_blank" rel="noopener" class="media-link">
+              <i class="fab fa-github"></i> GitHub
             </a>
-
-            <a href="#" class="social-card discord">
-
-                <i class="fa-brands fa-discord"></i>
-
-                <h3>Discord</h3>
-
-                <p>Join Server</p>
-
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="media-link">
+              <i class="fab fa-linkedin"></i> LinkedIn
             </a>
+            <button class="media-link-btn" id="copyEmailBtn" title="Copy Email">
+              <i class="fas fa-envelope"></i> Email
+            </button>
+          </div>
 
-            <a href="#" class="social-card youtube">
+          <!-- Featured Projects Block -->
+          <article class="last-post glass-subcard">
+            <div class="repo-list-header">
+              <span class="last-badge"><i class="fa-solid fa-bolt"></i> Live Apps</span>
+              <h3 class="post-title">Featured Projects</h3>
+            </div>
+            
+            <div class="projects-container">
+              
+              <!-- Project 1: Tic Tac Toe -->
+              <div class="project-card">
+                <div class="project-info">
+                  <div class="project-title-row">
+                    <span class="project-title"><i class="fa-solid fa-gamepad"></i> Tic Tac Toe</span>
+                    <span class="tech-badge">JS / Web</span>
+                  </div>
+                  <p class="project-desc">Interactive web-based game built with clean state management.</p>
+                </div>
+                <div class="project-actions-row">
+                  <button class="action-chip primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/">
+                    <i class="fa-solid fa-eye"></i> Quick View
+                  </button>
+                  <a href="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/" target="_blank" rel="noopener" class="action-chip secondary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live
+                  </a>
+                  <a href="https://github.com/himanshuyadav01241-hash/Tic-Tac-Toe" target="_blank" rel="noopener" class="action-chip code-btn" title="View Code">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
 
-                <i class="fa-brands fa-youtube"></i>
+              <!-- Project 2: Finance Manager -->
+              <div class="project-card">
+                <div class="project-info">
+                  <div class="project-title-row">
+                    <span class="project-title"><i class="fa-solid fa-wallet"></i> Finance Manager</span>
+                    <span class="tech-badge">Web App</span>
+                  </div>
+                  <p class="project-desc">Personal finance &amp; expense tracking application.</p>
+                </div>
+                <div class="project-actions-row">
+                  <button class="action-chip primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/FinanceManager/">
+                    <i class="fa-solid fa-eye"></i> Quick View
+                  </button>
+                  <a href="https://himanshuyadav01241-hash.github.io/FinanceManager/" target="_blank" rel="noopener" class="action-chip secondary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live
+                  </a>
+                  <a href="https://github.com/himanshuyadav01241-hash/FinanceManager" target="_blank" rel="noopener" class="action-chip code-btn" title="View Code">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
 
-                <h3>YouTube</h3>
+            </div>
 
-                <p>Gaming Videos</p>
-
+            <!-- Quick Link to All Repositories -->
+            <a href="https://github.com/himanshuyadav01241-hash?tab=repositories" target="_blank" rel="noopener" class="all-repos-bar">
+              <span><i class="fa-solid fa-folder-open"></i> Browse All GitHub Repositories</span>
+              <i class="fa-solid fa-chevron-right"></i>
             </a>
+          </article>
 
-            <a href="#" class="social-card instagram">
-
-                <i class="fa-brands fa-instagram"></i>
-
-                <h3>Instagram</h3>
-
-                <p>Daily Posts</p>
-
-            </a>
-
-            <a href="#" class="social-card github">
-
-                <i class="fa-brands fa-github"></i>
-
-                <h3>GitHub</h3>
-
-                <p>Projects</p>
-
-            </a>
-
-            <a href="#" class="social-card steam">
-
-                <i class="fa-brands fa-steam"></i>
-
-                <h3>Steam</h3>
-
-                <p>Game Library</p>
-
-            </a>
-
-        </div>
+        </section>
+      </div>
 
     </section>
-
-    <!-- GAME IDs -->
-
-    <section id="ids">
-
-        <div class="section-title">
-
-            Game IDs
-
-        </div>
-
-        <div class="id-grid">
-
-            <div class="id-card">
-
-                <i class="fa-solid fa-gamepad"></i>
-
-                <div>
-
-                    <h4>Riot ID</h4>
-
-                    <span>INSANEHR#1241</span>
-
-                </div>
-
-                <button data-copy="INSANEHR#1241">
-
-                    <i class="fa-solid fa-copy"></i>
-
-                </button>
-
-            </div>
-
-            <div class="id-card">
-
-                <i class="fa-solid fa-car"></i>
-
-                <div>
-
-                    <h4>Rockstar</h4>
-
-                    <span>himanshurao1241</span>
-
-                </div>
-
-                <button data-copy="himanshurao1241">
-
-                    <i class="fa-solid fa-copy"></i>
-
-                </button>
-
-            </div>
-
-            <div class="id-card">
-
-                <i class="fa-solid fa-hashtag"></i>
-
-                <div>
-
-                    <h4>Supercell</h4>
-
-                    <span>#P2U9JR28P</span>
-
-                </div>
-
-                <button data-copy="#P2U9JR28P">
-
-                    <i class="fa-solid fa-copy"></i>
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- PC SETUP -->
-
-    <section id="setup">
-
-        <div class="section-title">
-
-            Gaming Setup
-
-        </div>
-
-        <div class="spec-grid">
-
-            <div class="spec">
-
-                <i class="fa-solid fa-laptop"></i>
-
-                <h3>Acer Nitro V</h3>
-
-                <p>Laptop</p>
-
-            </div>
-
-            <div class="spec">
-
-                <i class="fa-solid fa-microchip"></i>
-
-                <h3>RTX 4050</h3>
-
-                <p>Graphics Card</p>
-
-            </div>
-
-            <div class="spec">
-
-                <i class="fa-solid fa-memory"></i>
-
-                <h3>16 GB RAM</h3>
-
-                <p>DDR5</p>
-
-            </div>
-
-            <div class="spec">
-
-                <i class="fa-solid fa-hard-drive"></i>
-
-                <h3>1TB SSD</h3>
-
-                <p>Storage</p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- GAMES -->
-
-    <section id="games">
-
-        <div class="section-title">
-
-            Recently Played
-
-        </div>
-
-        <div class="games-grid">
-
-            <div class="game-card">
-
-                <img src="images/valorant.jpg" alt="">
-
-                <div class="overlay">
-
-                    <h3>Valorant</h3>
-
-                    <span>Silver II</span>
-
-                </div>
-
-            </div>
-
-            <div class="game-card">
-
-                <img src="images/gta.jpg" alt="">
-
-                <div class="overlay">
-
-                    <h3>GTA V RP</h3>
-
-                    <span>Roleplay</span>
-
-                </div>
-
-            </div>
-
-            <div class="game-card">
-
-                <img src="avatars.jpg" alt="">
-
-                <div class="overlay">
-
-                    <h3>Minecraft</h3>
-
-                    <span>Creative</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-        <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-logo">
-
-            <i class="fa-solid fa-gamepad"></i>
-
-            INSANE HR
-
-        </div>
-
-        <p>
-
-            © 2026 INSANE HR. Designed with ❤️ for Gaming.
-
-        </p>
-
-        <div class="footer-social">
-
-            <a href="#"><i class="fa-brands fa-discord"></i></a>
-
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-
-        </div>
-
-    </footer>
-
-    <!-- BACK TO TOP -->
-
-    <button id="topBtn">
-
-        <i class="fa-solid fa-arrow-up"></i>
-
-    </button>
-
-    <!-- FLOATING RGB BLOBS -->
-
-    <div class="blob blob1"></div>
-
-    <div class="blob blob2"></div>
-
-    <div class="blob blob3"></div>
-
-    <!-- AMBIENT LIGHTS -->
-
-    <div class="ambient ambient-left"></div>
-
-    <div class="ambient ambient-right"></div>
-
-    <!-- NOTIFICATION -->
-
-    <div id="toast">
-
-        Copied to Clipboard!
-
+  </main>
+
+  <!-- Live Project Modal Frame -->
+  <div class="modal" id="projectModal">
+    <div class="modal-content glass-box">
+      <div class="modal-header">
+        <span id="modalTitle">Live Preview</span>
+        <button class="close-modal" id="closeModal">&times;</button>
+      </div>
+      <iframe id="previewIframe" src="" frameborder="0"></iframe>
     </div>
+  </div>
 
-    <!-- EASTER EGG -->
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
 
-    <div id="easterEgg">
+  <!-- Local music file relative to root directory -->
+  <audio id="bgAudio" loop src="music.mp3"></audio>
 
-        🎉 Konami Code Activated 🎮
-
-    </div>
-
-    <!-- AUDIO PLAYLIST -->
-
-    <script>
-
-   const playlist = [
-{
-    title: "Midnight City",
-    src: "music.mp3"
-}
-];
-
-    </script>
-
-    <!-- MAIN SCRIPT -->
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
