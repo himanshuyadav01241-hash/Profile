@@ -12,12 +12,14 @@
   <main class="container">
     <section class="profile-card">
       
-      <!-- Profile Header -->
+      <!-- Profile Banner -->
       <header class="profile-header">
+        <div class="banner-img"></div>
         <div class="banner-overlay"></div>
+        
         <div class="main-profile">
           <div class="profile-image-container">
-            <div class="profile-image" style="background-image: url('avatar.jpg');"></div>
+            <div class="profile-image"></div>
           </div>
           <div class="profile-names">
             <h1 class="username">Himanshu Yadav</h1>
@@ -31,11 +33,11 @@
         
         <!-- Sidebar -->
         <aside class="profile-actions">
-          <button class="action-btn follow-btn" id="followBtn">
+          <button class="action-btn follow-btn" id="followBtn" type="button">
             <i class="fa-solid fa-user-plus"></i> <span id="followText">Follow</span>
           </button>
 
-          <button class="action-btn music-btn" id="musicToggleBtn">
+          <button class="action-btn music-btn" id="musicToggleBtn" type="button">
             <i class="fa-solid fa-music"></i> <span id="musicText">Play Music</span>
           </button>
 
@@ -74,7 +76,7 @@
                 <i class="fa-solid fa-arrow-up-right-from-square card-arrow"></i>
               </a>
 
-              <button class="social-card" id="copyEmailBtn">
+              <button class="social-card" id="copyEmailBtn" type="button">
                 <i class="fas fa-envelope social-icon"></i>
                 <div class="social-info">
                   <span class="social-name">Email Me</span>
@@ -87,9 +89,9 @@
             <div class="tech-stack-row">
               <span class="tech-label">Core Focus:</span>
               <div class="tech-tags">
-                <span class="tag tag-orange">⚡ Full Stack</span>
-                <span class="tag tag-yellow">⭐ Open Source</span>
-                <span class="tag tag-green">🧩 Algorithms</span>
+                <span class="tag">⚡ Full Stack</span>
+                <span class="tag">⭐ Open Source</span>
+                <span class="tag">🧩 Algorithms</span>
               </div>
             </div>
           </div>
@@ -112,7 +114,7 @@
                   <p class="project-desc">Interactive web-based game built with clean state management.</p>
                 </div>
                 <div class="project-actions-row">
-                  <button class="action-chip primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/">
+                  <button class="action-chip primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/" type="button">
                     <i class="fa-solid fa-eye"></i> Quick View
                   </button>
                   <a href="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/" target="_blank" rel="noopener" class="action-chip secondary">
@@ -134,7 +136,7 @@
                   <p class="project-desc">Personal finance & expense tracking application.</p>
                 </div>
                 <div class="project-actions-row">
-                  <button class="action-chip primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/FinanceManager/">
+                  <button class="action-chip primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/FinanceManager/" type="button">
                     <i class="fa-solid fa-eye"></i> Quick View
                   </button>
                   <a href="https://himanshuyadav01241-hash.github.io/FinanceManager/" target="_blank" rel="noopener" class="action-chip secondary">
@@ -160,7 +162,8 @@
     </section>
   </main>
 
-  <audio id="bgAudio" loop src="music.mp3"></audio>
+  <audio id="bgAudio" loop preload="auto" src="music.mp3"></audio>
 
+  <script src="script.js"></script>
 </body>
 </html>
