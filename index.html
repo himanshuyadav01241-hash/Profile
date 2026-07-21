@@ -1,169 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Himanshu Yadav - Profile</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himanshu Yadav | Portfolio</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
+  <div class="bg-blur"></div>
+
   <main class="container">
-    <section class="profile-card">
-      
-      <!-- Profile Banner -->
-      <header class="profile-header">
-        <div class="banner-img"></div>
-        <div class="banner-overlay"></div>
-        
-        <div class="main-profile">
-          <div class="profile-image-container">
-            <div class="profile-image"></div>
+    <div class="profile-card">
+
+      <!-- ===========================
+      HEADER / HERO SECTION
+      =========================== -->
+      <header class="hero">
+        <div class="banner">
+          <div class="banner-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring">
+              <div class="avatar"></div>
+            </div>
           </div>
-          <div class="profile-names">
-            <h1 class="username">Himanshu Yadav</h1>
-            <small class="page-title">Full Stack & Web Developer</small>
+
+          <div class="hero-text">
+            <div class="status">
+              <span class="status-dot"></span>
+              Available for Projects
+            </div>
+
+            <h1>Himanshu Yadav</h1>
+
+            <p>
+              Building cool things, breaking them,
+              then pretending it was intentional.
+            </p>
+
+            <div class="hero-buttons">
+              <button id="followBtn" class="primary-btn" type="button">
+                <i class="fa-solid fa-user-plus"></i>
+                <span id="followText">Follow</span>
+              </button>
+
+              <button id="musicToggleBtn" class="glass-btn" type="button">
+                <i class="fa-solid fa-music"></i>
+                <span id="musicText">Play Music</span>
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
-      <!-- Profile Body -->
-      <div class="profile-body">
-        
-        <!-- Sidebar -->
-        <aside class="profile-actions">
-          <button class="action-btn follow-btn" id="followBtn" type="button">
-            <i class="fa-solid fa-user-plus"></i> <span id="followText">Follow</span>
-          </button>
+      <!-- ===========================
+      CONTENT GRID
+      =========================== -->
+      <section class="content-grid">
 
-          <button class="action-btn music-btn" id="musicToggleBtn" type="button">
-            <i class="fa-solid fa-music"></i> <span id="musicText">Play Music</span>
-          </button>
+        <!-- LEFT COLUMN -->
+        <aside class="left-column">
+          <div class="glass-card quote-card">
+            <div class="card-title">
+              <i class="fa-solid fa-quote-left"></i>
+              <span>Quote</span>
+            </div>
+            <p>
+              Making life unnecessarily
+              complicated just to solve
+              it in a cooler way.
+            </p>
+          </div>
 
-          <div class="bio bio-box">
-            <div class="bio-header"><i class="fa-solid fa-quote-left"></i> Bio</div>
-            <p class="bio-text">"Making life unnecessarily complicated just to solve it in a cooler way."</p>
+          <div class="glass-card">
+            <div class="card-title">
+              <i class="fa-regular fa-compass"></i>
+              <span>Connect</span>
+            </div>
+
+            <div class="social-list">
+              <a class="social-item" href="https://github.com/himanshuyadav01241-hash" target="_blank" rel="noopener noreferrer">
+                <div>
+                  <i class="fab fa-github"></i>
+                  <strong>GitHub</strong>
+                  <small>@himanshuyadav01241-hash</small>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+              <a class="social-item" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <div>
+                  <i class="fab fa-linkedin"></i>
+                  <strong>LinkedIn</strong>
+                  <small>Let's connect</small>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+              <button id="copyEmailBtn" class="social-item" type="button">
+                <div>
+                  <i class="fa-solid fa-envelope"></i>
+                  <strong>Email</strong>
+                  <small>Copy to clipboard</small>
+                </div>
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
           </div>
         </aside>
 
-        <!-- Main Content Area -->
-        <section class="account-info">
-          
-          <!-- Connect & Engage Section -->
-          <div class="section-card">
-            <div class="section-header">
-              <span class="section-title"><i class="fa-regular fa-compass"></i> Connect & Engage</span>
-              <small class="hint-text">Click & hover to explore</small>
-            </div>
+        <!-- RIGHT COLUMN -->
+        <section class="right-column">
 
-            <div class="social-cards-grid">
-              <a href="https://github.com/himanshuyadav01241-hash" target="_blank" rel="noopener" class="social-card">
-                <i class="fab fa-github social-icon"></i>
-                <div class="social-info">
-                  <span class="social-name">GitHub</span>
-                  <span class="social-sub">@himanshuyadav01241-hash</span>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square card-arrow"></i>
-              </a>
-
-              <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-card">
-                <i class="fab fa-linkedin social-icon"></i>
-                <div class="social-info">
-                  <span class="social-name">LinkedIn</span>
-                  <span class="social-sub">Let's Connect professionally</span>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square card-arrow"></i>
-              </a>
-
-              <button class="social-card" id="copyEmailBtn" type="button">
-                <i class="fas fa-envelope social-icon"></i>
-                <div class="social-info">
-                  <span class="social-name">Email Me</span>
-                  <span class="social-sub">Copy to clipboard</span>
-                </div>
-                <i class="fa-regular fa-copy card-arrow"></i>
-              </button>
-            </div>
-
-            <div class="tech-stack-row">
-              <span class="tech-label">Core Focus:</span>
-              <div class="tech-tags">
-                <span class="tag">⚡ Full Stack</span>
-                <span class="tag">⭐ Open Source</span>
-                <span class="tag">🧩 Algorithms</span>
+          <!-- FEATURED PROJECTS -->
+          <div class="glass-card">
+            <div class="section-heading">
+              <div>
+                <span class="badge">
+                  <i class="fa-solid fa-bolt"></i>
+                  Featured
+                </span>
+                <h2>Projects</h2>
               </div>
+
+              <a href="https://github.com/himanshuyadav01241-hash?tab=repositories" target="_blank" rel="noopener noreferrer" class="view-all">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <div class="projects-grid">
+
+              <!-- Project 1 -->
+              <article class="project-card">
+                <div class="project-top">
+                  <div class="project-icon">🎮</div>
+                  <span class="project-stack">JavaScript</span>
+                </div>
+
+                <h3>Tic Tac Toe</h3>
+                <p>
+                  Interactive browser game with smooth gameplay,
+                  responsive layout and clean logic.
+                </p>
+
+                <div class="project-buttons">
+                  <button class="project-btn primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/" type="button">
+                    <i class="fa-solid fa-eye"></i>
+                    Preview
+                  </button>
+
+                  <a href="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/" target="_blank" rel="noopener noreferrer" class="project-btn">
+                    Live
+                  </a>
+
+                  <a href="https://github.com/himanshuyadav01241-hash/Tic-Tac-Toe" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub Repository">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Project 2 -->
+              <article class="project-card">
+                <div class="project-top">
+                  <div class="project-icon">💰</div>
+                  <span class="project-stack">Web App</span>
+                </div>
+
+                <h3>Finance Manager</h3>
+                <p>
+                  Expense tracker with modern UI,
+                  balance tracking and category management.
+                </p>
+
+                <div class="project-buttons">
+                  <button class="project-btn primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/FinanceManager/" type="button">
+                    <i class="fa-solid fa-eye"></i>
+                    Preview
+                  </button>
+
+                  <a href="https://himanshuyadav01241-hash.github.io/FinanceManager/" target="_blank" rel="noopener noreferrer" class="project-btn">
+                    Live
+                  </a>
+
+                  <a href="https://github.com/himanshuyadav01241-hash/FinanceManager" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub Repository">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </article>
+
             </div>
           </div>
 
-          <!-- Featured Projects Section -->
-          <div class="section-card">
-            <div class="section-header">
-              <span class="live-badge"><i class="fa-solid fa-bolt"></i> Live Apps</span>
-              <h3 class="section-title">Featured Projects</h3>
+          <!-- BOTTOM CTA -->
+          <div class="glass-card github-card">
+            <div>
+              <h3>Explore More Projects</h3>
+              <p>
+                More experiments, tools and side projects
+                are available on my GitHub profile.
+              </p>
             </div>
 
-            <div class="projects-container">
-              <!-- Project 1 -->
-              <div class="project-card">
-                <div class="project-info">
-                  <div class="project-title-row">
-                    <span class="project-title"><i class="fa-solid fa-gamepad"></i> Tic Tac Toe</span>
-                    <span class="tech-badge">JS / Web</span>
-                  </div>
-                  <p class="project-desc">Interactive web-based game built with clean state management.</p>
-                </div>
-                <div class="project-actions-row">
-                  <button class="action-chip primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/" type="button">
-                    <i class="fa-solid fa-eye"></i> Quick View
-                  </button>
-                  <a href="https://himanshuyadav01241-hash.github.io/Tic-Tac-Toe/" target="_blank" rel="noopener" class="action-chip secondary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live
-                  </a>
-                  <a href="https://github.com/himanshuyadav01241-hash/Tic-Tac-Toe" target="_blank" rel="noopener" class="action-chip icon-only">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Project 2 -->
-              <div class="project-card">
-                <div class="project-info">
-                  <div class="project-title-row">
-                    <span class="project-title"><i class="fa-solid fa-wallet"></i> Finance Manager</span>
-                    <span class="tech-badge">Web App</span>
-                  </div>
-                  <p class="project-desc">Personal finance & expense tracking application.</p>
-                </div>
-                <div class="project-actions-row">
-                  <button class="action-chip primary preview-btn" data-url="https://himanshuyadav01241-hash.github.io/FinanceManager/" type="button">
-                    <i class="fa-solid fa-eye"></i> Quick View
-                  </button>
-                  <a href="https://himanshuyadav01241-hash.github.io/FinanceManager/" target="_blank" rel="noopener" class="action-chip secondary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live
-                  </a>
-                  <a href="https://github.com/himanshuyadav01241-hash/FinanceManager" target="_blank" rel="noopener" class="action-chip icon-only">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Repos Banner -->
-            <a href="https://github.com/himanshuyadav01241-hash?tab=repositories" target="_blank" rel="noopener" class="repos-banner">
-              <span><i class="fa-solid fa-folder-open"></i> Browse All GitHub Repositories</span>
-              <i class="fa-solid fa-chevron-right"></i>
+            <a href="https://github.com/himanshuyadav01241-hash" target="_blank" rel="noopener noreferrer" class="github-btn">
+              Visit GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
 
         </section>
-      </div>
+      </section>
 
-    </section>
+    </div>
   </main>
 
-  <audio id="bgAudio" loop preload="auto" src="music.mp3"></audio>
+  <!-- AUDIO -->
+  <audio id="bgAudio" src="music.mp3" loop></audio>
 
-  <script src="script.js"></script>
+  <!-- JAVASCRIPT -->
+  <script src="./script.js"></script>
 </body>
 </html>
