@@ -3,11 +3,12 @@
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  /* Restored your actual bg.png background image */
-  background: #0d0f18 url('bg.png') center/cover no-repeat fixed;
+  /* Updated to bg.jpg */
+  background: #0b0d17 url('bg.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
   color: #ffffff;
 }
@@ -18,68 +19,88 @@ body {
   justify-content: center;
   align-items: center;
   padding: 30px 15px;
+  position: relative;
+  z-index: 1;
 }
 
-/* Semi-transparent dark container so bg.png shows through nicely */
+/* Translucent glass container allowing bg.jpg to pass through */
 .profile-card {
   width: min(100%, 960px);
-  background: rgba(18, 22, 36, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(15, 18, 30, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
 }
 
+/* Header Banner Section */
 .profile-header {
-  height: 140px;
+  height: 150px;
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.banner-img {
+  position: absolute;
+  inset: 0;
+  /* Updated to banner.png */
+  background: #1e2438 url('banner.png') center/cover no-repeat;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 13, 23, 0.1) 0%, rgba(15, 18, 30, 0.85) 100%);
 }
 
 .main-profile {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   position: absolute;
-  bottom: -30px;
-  left: 30px;
-  gap: 20px;
+  bottom: 12px;
+  left: 25px;
+  gap: 18px;
+  z-index: 3;
 }
 
-/* Original Profile Avatar Ring Design Restored */
+/* Original Circular Avatar Styling */
 .profile-image-container {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   padding: 3px;
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(168, 85, 247, 0.8));
-  box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+  flex-shrink: 0;
 }
 
 .profile-image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-position: center;
-  background-size: cover;
-  background-color: #1a1e2d;
-  border: 3px solid #121624;
+  background: #1a1e2d url('avatar.jpg') center/cover no-repeat;
+  border: 3px solid #0f121e;
 }
 
 .profile-names {
-  margin-top: 35px;
+  margin-bottom: 5px;
 }
 
 .username {
   font-size: 22px;
   font-weight: 700;
   color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .page-title {
-  color: #94a3b8;
+  color: #a0aec0;
   font-size: 13px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 /* Main Body Layout */
@@ -87,19 +108,21 @@ body {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 20px;
-  padding: 50px 25px 25px 25px;
+  padding: 25px;
 }
 
 .profile-actions {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
+  z-index: 10;
 }
 
-/* Original Action Buttons Enhanced */
+/* Action Buttons */
 .action-btn {
   all: unset;
-  padding: 10px 16px;
+  padding: 12px 16px;
   border-radius: 12px;
   font-size: 13px;
   font-weight: 600;
@@ -110,6 +133,8 @@ body {
   cursor: pointer;
   transition: all 0.25s ease;
   box-sizing: border-box;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 .follow-btn {
@@ -118,10 +143,8 @@ body {
   box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
 }
 
-.follow-btn:hover {
-  background: #4752c4;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(88, 101, 242, 0.5);
+.follow-btn:active {
+  transform: scale(0.98);
 }
 
 .music-btn {
@@ -130,9 +153,8 @@ body {
   color: #e2e8f0;
 }
 
-.music-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.25);
+.music-btn:active {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Bio Box */
@@ -160,11 +182,13 @@ body {
   font-style: italic;
 }
 
-/* Section Cards */
+/* Content Area */
 .account-info {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
+  z-index: 10;
 }
 
 .section-card {
@@ -218,12 +242,12 @@ body {
   cursor: pointer;
   box-sizing: border-box;
   transition: all 0.25s ease;
+  touch-action: manipulation;
 }
 
-.social-card:hover {
-  background: rgba(255, 255, 255, 0.07);
+.social-card:hover, .social-card:active {
+  background: rgba(255, 255, 255, 0.08);
   border-color: rgba(99, 102, 241, 0.5);
-  transform: translateY(-2px);
 }
 
 .social-icon {
@@ -259,6 +283,7 @@ body {
   align-items: center;
   gap: 10px;
   font-size: 12px;
+  flex-wrap: wrap;
 }
 
 .tech-label {
@@ -269,6 +294,7 @@ body {
 .tech-tags {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -281,7 +307,7 @@ body {
   color: #e2e8f0;
 }
 
-/* Projects Section */
+/* Projects */
 .live-badge {
   background: #6366f1;
   color: #fff;
@@ -296,7 +322,7 @@ body {
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
 }
 
@@ -309,12 +335,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 12px;
-  transition: all 0.25s ease;
-}
-
-.project-card:hover {
-  border-color: rgba(99, 102, 241, 0.5);
-  background: rgba(255, 255, 255, 0.05);
 }
 
 .project-title-row {
@@ -355,7 +375,7 @@ body {
 
 .action-chip {
   all: unset;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: 8px;
   font-size: 11px;
   font-weight: 600;
@@ -363,16 +383,13 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-  transition: all 0.2s ease;
+  touch-action: manipulation;
+  box-sizing: border-box;
 }
 
 .action-chip.primary {
   background: #6366f1;
   color: #fff;
-}
-
-.action-chip.primary:hover {
-  background: #4f46e5;
 }
 
 .action-chip.secondary {
@@ -382,24 +399,16 @@ body {
   text-decoration: none;
 }
 
-.action-chip.secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
 .action-chip.icon-only {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #cbd5e1;
-  padding: 6px 8px;
+  padding: 8px 10px;
   margin-left: auto;
   text-decoration: none;
 }
 
-.action-chip.icon-only:hover {
-  color: #818cf8;
-}
-
-/* Browse Repos Link */
+/* Repos Banner */
 .repos-banner {
   display: flex;
   justify-content: space-between;
@@ -412,17 +421,55 @@ body {
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.25s ease;
+  touch-action: manipulation;
 }
 
-.repos-banner:hover {
-  background: rgba(99, 102, 241, 0.1);
-  border-style: solid;
-  border-color: #6366f1;
-}
-
+/* Mobile Responsive Fixes */
 @media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .profile-header {
+    height: 120px;
+  }
+
+  .main-profile {
+    left: 15px;
+    bottom: 10px;
+    gap: 12px;
+  }
+
+  .profile-image-container {
+    width: 75px;
+    height: 75px;
+  }
+
+  .username {
+    font-size: 18px;
+  }
+
+  .page-title {
+    font-size: 11px;
+  }
+
   .profile-body {
     grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .profile-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .bio-box {
+    grid-column: 1 / -1;
+  }
+
+  .action-btn {
+    width: 100%;
   }
 }
